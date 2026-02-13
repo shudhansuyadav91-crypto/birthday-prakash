@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Prakash Sir</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background: linear-gradient(-45deg, #ff6a00, #ee0979, #00c9ff, #92fe9d);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+  overflow:hidden;
+  text-align:center;
+  color:white;
+}
+
+@keyframes gradientBG {
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+.container{
+  backdrop-filter: blur(20px);
+  background: rgba(255,255,255,0.1);
+  padding:60px;
+  border-radius:25px;
+  box-shadow:0 0 40px rgba(0,0,0,0.4);
+  width:90%;
+  max-width:900px;
+}
+
+.countdown{
+  font-size:90px;
+  font-weight:bold;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.2);}
+  100%{transform:scale(1);}
+}
+
+.message{
+  display:none;
+  animation: zoomIn 2s ease forwards;
+}
+
+@keyframes zoomIn{
+  from{
+    transform: scale(0);
+    opacity:0;
+  }
+  to{
+    transform: scale(1);
+    opacity:1;
+  }
+}
+
+.big-text{
+  font-size:20px;
+  font-weight:400;
+  letter-spacing:3px;
+  text-shadow:0 0 20px #fff, 0 0 40px #ff00ff, 0 0 60px #00ffff;
+  margin-bottom:30px;
+}
+
+.sub-text{
+  font-size:35px;
+  font-weight:600;
+  margin-bottom:20px;
+}
+
+.para{
+  font-size:22px;
+  line-height:1.6;
+  margin-top:15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="countdown" id="countdown">5</div>
+
+  <div class="message" id="message">
+    <div class="big-text">🎉 HAPPY BIRTHDAY </div>
+    <div class="sub-text">Respected Prakash Sir </div>
+    <p class="para">
+      You are not just a teacher, you are an inspiration.  
+      Your guidance lights our path and your knowledge shapes our future.  
+      May this year bring you happiness, success, and endless achievements.
+    </p>
+    <p class="para">
+      Thank you for everything you do.for us.</p>
+  </div>
+</div>
+
+<script>
+let count = 5;
+const countdownEl = document.getElementById("countdown");
+const messageEl = document.getElementById("message");
+
+let timer = setInterval(() => {
+  count--;
+  countdownEl.textContent = count;
+
+  if(count === 0){
+    clearInterval(timer);
+    countdownEl.style.display = "none";
+    messageEl.style.display = "block";
+  }
+},1000);
+</script>
+
+</body>
+</html>
